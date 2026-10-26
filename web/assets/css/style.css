@@ -1,0 +1,223 @@
+:root {
+    color-scheme: light;
+    --ink: #1d3027;
+    --muted: #758279;
+    --green: #35785a;
+    --green-dark: #f9f9f9;
+    --green-soft: #e9f3eb;
+    --line: #e8ece8;
+    --page: #f5f7f4;
+    --white: #fff;
+    --shadow: 0 18px 45px rgba(39, 66, 49, .08);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #fff;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.app-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.layout {
+    width: min(1440px, 100%);
+    flex: 1;
+    margin: 0 auto;
+    padding: 0 0 28px;
+    display: grid;
+    grid-template-columns: 238px minmax(0, 1fr);
+    align-items: start;
+    gap: 28px;
+}
+
+.site-footer {
+    min-height: 58px;
+    padding: 0 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid var(--line);
+    color: #8a958c;
+    background: var(--white);
+    font-size: 10px;
+}
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background:
+        radial-gradient(ellipse at 15% 15%, rgba(209, 231, 211, .8), transparent 37%),
+        radial-gradient(ellipse at 85% 80%, rgba(243, 227, 204, .7), transparent 34%),
+        var(--page);
+}
+
+.auth-shell {
+    width: min(450px, 100%);
+}
+
+.auth-card {
+    padding: 42px;
+    border: 1px solid rgba(232, 236, 232, .9);
+    border-radius: 22px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.auth-brand {
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--ink);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.auth-brand .brand-mark {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    color: var(--white);
+    background: var(--green);
+    font-size: 18px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--green);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.35px;
+}
+
+.auth-card h1 {
+    margin: 12px 0 9px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 31px;
+    font-weight: 800;
+    letter-spacing: -1.2px;
+    line-height: 1.12;
+}
+
+.auth-card > p:not(.auth-switch) {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.button {
+    min-height: 46px;
+    padding: 0 19px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 12px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+}
+
+.button-primary {
+    color: var(--white);
+    background: var(--green);
+    box-shadow: 0 8px 18px rgba(53, 120, 90, .16);
+}
+
+.button-primary:hover {
+    background: var(--green-dark);
+    box-shadow: 0 10px 22px rgba(53, 120, 90, .24);
+}
+
+.auth-button {
+    width: 100%;
+    margin-top: 25px;
+}
+
+.auth-switch {
+    margin: 22px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+    text-align: center;
+}
+
+.auth-switch a {
+    color: var(--green-dark);
+    font-weight: 700;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+@media (max-width: 980px) {
+    .layout {
+        padding: 26px 24px 38px;
+        grid-template-columns: 205px minmax(0, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    .layout {
+        padding: 17px 15px 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+    }
+
+    .layout > main {
+        width: 100%;
+    }
+
+    .site-footer {
+        min-height: 58px;
+        padding: 12px 16px;
+        font-size: 9px;
+    }
+
+    .auth-card {
+        padding: 32px 25px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
